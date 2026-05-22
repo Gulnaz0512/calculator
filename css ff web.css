@@ -1,5 +1,55 @@
-* {
-  margin: 0;
+[data-theme="theme-1"] {
+  --bg: hsl(221, 29%, 30%);
+  --text: #ffffff;
+
+  --screen-bg: hsl(224, 36%, 15%);
+  --keypad-bg: hsl(223, 31%, 20%);
+
+  --btn-bg: hsl(30, 25%, 89%);
+  --btn-shadow: hsl(28, 16%, 65%);
+  --btn-text: hsl(221, 14%, 31%);
+
+  --del-bg: hsl(225, 21%, 49%);
+  --del-shadow: hsl(224, 28%, 35%);
+
+  --equal-bg: hsl(6, 63%, 50%);
+  --equal-shadow: hsl(6, 70%, 34%);
+}
+[data-theme="theme-2"] {
+  --bg: hsl(0, 0%, 90%);
+  --text: hsl(60, 10%, 19%);
+
+  --screen-bg: hsl(0, 0%, 93%);
+  --keypad-bg: hsl(0, 5%, 81%);
+
+  --btn-bg: hsl(45, 7%, 89%);
+  --btn-shadow: hsl(35, 11%, 61%);
+  --btn-text: hsl(60, 10%, 19%);
+
+  --del-bg: hsl(185, 42%, 37%);
+  --del-shadow: hsl(185, 58%, 25%);
+
+  --equal-bg: hsl(25, 98%, 40%);
+  --equal-shadow: hsl(25, 99%, 27%);
+}
+[data-theme="theme-3"] {
+  --bg: hsl(268, 75%, 9%);
+  --text: hsl(52, 100%, 62%);
+
+  --screen-bg: hsl(268, 71%, 12%);
+  --keypad-bg: hsl(268, 71%, 12%);
+
+  --btn-bg: hsl(268, 47%, 21%);
+  --btn-shadow: hsl(290, 70%, 36%);
+  --btn-text: hsl(52, 100%, 62%);
+
+  --del-bg: hsl(281, 89%, 26%);
+  --del-shadow: hsl(285, 91%, 52%);
+
+  --equal-bg: hsl(176, 100%, 44%);
+  --equal-shadow: hsl(177, 92%, 70%);
+}
+* { margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -10,7 +60,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 24px;
-  background: hsl(221, 29%, 30%);
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, sans-serif;
   transition: background 0.25s ease;
 }
@@ -23,7 +74,7 @@ body {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  color: white;
+  color: var(--text);
   margin-bottom: 28px;
 }
 
@@ -82,8 +133,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: hsl(224, 36%, 15%);
-  color: white;
+  background: var(--screen-bg);
+  color: var(--text);
   border-radius: 10px;
   font-size: clamp(40px, 9vw, 56px);
   line-height: 1;
@@ -96,7 +147,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   padding: 32px;
-  background: hsl(223, 31%, 20%);
+  background: var(--keypad-bg);
   border-radius: 10px;
 }
 
@@ -104,9 +155,9 @@ button {
   min-height: 64px;
   border: 0;
   border-radius: 10px;
-  background: hsl(30, 25%, 89%);
-  box-shadow: inset 0 -4px 0 hsl(28, 16%, 65%);
-  color: hsl(221, 14%, 31%);
+  background: var(--btn-bg);
+  box-shadow: inset 0 -4px 0 var(--btn-shadow);
+  color: var(--btn-text);
   font-family: inherit;
   font-size: 40px;
   cursor: pointer;
@@ -129,13 +180,14 @@ button:active {
 }
 
 .key-action {
-  background: hsl(225, 21%, 49%);
-  box-shadow: inset 0 -4px 0 hsl(224, 28%, 35%);
+  background: var(--del-bg);
+  box-shadow: inset 0 -4px 0 var(--del-shadow);
+  color: white;
 }
 
 .key-equal {
-  background: hsl(6, 63%, 50%);
-  box-shadow: inset 0 -4px 0 hsl(6, 70%, 34%);
+  background: var(--equal-bg);
+  box-shadow: inset 0 -4px 0 var(--equal-shadow);
 }
 
 .key-wide {
